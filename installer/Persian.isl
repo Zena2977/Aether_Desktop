@@ -1,0 +1,53 @@
+; Aether — فارسی (حداقلی ولی کامل برای ویزارد نصب)
+[LangOptions]
+LanguageName=<0641><0627><0631><0633><06CC>
+LanguageID=$0429
+LanguageCodePage=0
+DialogFontName=Segoe UI
+DialogFontSize=9
+WelcomeFontName=Segoe UI
+WelcomeFontSize=12
+TitleFontName=Segoe UI
+TitleFontSize=29
+CopyrightFontName=Segoe UI
+CopyrightFontSize=9
+RightToLeft=yes
+
+[Messages]
+SetupAppTitle=نصب‌کننده
+SetupWindowTitle=نصب %1
+UninstallAppTitle=حذف نصب
+UninstallAppFullTitle=حذف %1
+InformationTitle=اطلاعات
+ConfirmTitle=تأیید
+ErrorTitle=خطا
+ButtonBack=< قبلی
+ButtonNext=بعدی >
+ButtonInstall=نصب
+ButtonCancel=انصراف
+ButtonYes=بله
+ButtonNo=خیر
+ButtonFinish=پایان
+ButtonBrowse=مرور…
+ExitSetupTitle=خروج از نصب
+ExitSetupMessage=نصب کامل نشده است. اگر الان خارج شوید، برنامه نصب نخواهد شد.%n%nمطمئنید می‌خواهید خارج شوید؟
+WelcomeLabel1=خوش آمدید به نصب [name]
+WelcomeLabel2=این برنامه [name/ver] را روی رایانهٔ شما نصب می‌کند.%n%nپیش از ادامه، بهتر است برنامه‌های دیگر را ببندید.
+WizardLicense=قرارداد لایسنس
+LicenseLabel=لطفاً قرارداد زیر را بخوانید.
+LicenseAccepted=موافقم
+LicenseNotAccepted=موافق نیستم
+WizardSelectDir=انتخاب محل نصب
+SelectDirDesc=[name] کجا نصب شود؟
+SelectDirLabel3=برنامه در پوشهٔ زیر نصب می‌شود.
+WizardSelectTasks=انتخاب کارهای اضافی
+SelectTasksDesc=چه کارهای دیگری انجام شود؟
+WizardReady=آمادهٔ نصب
+ReadyLabel1=نصب‌کننده آماده است [name] را نصب کند.
+WizardInstalling=در حال نصب
+InstallingLabel=لطفاً منتظر بمانید…
+FinishedHeadingLabel=نصب [name] کامل شد
+FinishedLabel=[name] روی رایانهٔ شما نصب شد.
+RunEntryExec=اجرای %1
+ConfirmUninstall=مطمئنید می‌خواهید %1 و همهٔ اجزای آن حذف شوند؟
+UninstallStatusLabel=در حال حذف %1…

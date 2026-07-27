@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Design tokens — ۱:۱ از app/src/main/java/studio/cluvex/aether/ui/theme/Color.kt
+   هیچ رنگی در این پروژه نباید خارج از این فایل تعریف شود.
+   ========================================================================== */
+:root {
+  /* Navy palette (Color.kt) */
+  --navy-900: #0A0E1A;
+  --navy-800: #0F1626;
+  --navy-700: #16203A;
+  --navy-600: #1E2A4A;
+
+  --aether-blue:  #4C8DFF;
+  --aether-cyan:  #32E0C4;
+  --aether-error: #FF5C7A;
+
+  --on-dark:       #E6ECF5;
+  --on-dark-muted: #9AA7BF;
+
+  /* Material 3 role mapping (Theme.kt::AetherDarkColorScheme) */
+  --md-primary:            var(--aether-blue);
+  --md-on-primary:         #FFFFFF;
+  --md-secondary:          var(--aether-cyan);
+  --md-on-secondary:       #04211C;
+  --md-tertiary:           var(--aether-cyan);
+  --md-background:         var(--navy-900);
+  --md-on-background:      var(--on-dark);
+  --md-surface:            var(--navy-800);
+  --md-on-surface:         var(--on-dark);
+  --md-surface-variant:    var(--navy-700);
+  --md-on-surface-variant: var(--on-dark-muted);
+  --md-error:              var(--aether-error);
+  --md-on-error:           #FFFFFF;
+  --md-outline:            var(--navy-600);
+
+  /* Material 3 type scale (Typography() default) */
+  --type-display-large:   57px/64px;
+  --type-headline-medium: 28px/36px;
+  --type-title-large:     22px/28px;
+  --type-body-medium:     14px/20px;
+  --type-body-small:      12px/16px;
+  --type-label-large:     14px/20px;
+
+  /* Material 3 shape */
+  --shape-xs: 4px;
+  --shape-s: 8px;
+  --shape-m: 12px;
+  --shape-l: 16px;
+  --shape-xl: 28px;
+  --shape-full: 999px;
+
+  /* Material motion */
+  --motion-standard: cubic-bezier(0.2, 0, 0, 1);
+  --motion-emphasized: cubic-bezier(0.05, 0.7, 0.1, 1);
+
+  /* ۱.۲.۲: پس‌زمینه فلت است، نه گرادیان متحرک (aurora حذف شد).
+     این در دسکتاپ هم عیناً رعایت می‌شود — هیچ انیمیشن دائمیِ پس‌زمینه. */
+  --ambient-fill: var(--navy-900);
+}
+
+/* ==========================================================================
+   تطبیق با دسکتاپ: طراحی عیناً همان است، فقط مقیاس و چیدمان تغییر می‌کند.
+   موبایل: تک‌ستونی با Drawer رویی.
+   دسکتاپ: همان کارت‌ها، ولی در یک rail دائمی + ستون محتوا.
+   ========================================================================== */
+:root {
+  --rail-width: 84px; /* v9: slim permanent Material navigation rail */
+  --content-max: 560px;   /* عرض منطقی صفحهٔ موبایل، حفظ‌شده تا طراحی کشیده نشود */
+  --titlebar-height: 40px;
+  --connect-button: 172px;
+}
+
+@media (min-width: 1280px) {
+  :root { --connect-button: 196px; --content-max: 620px; }
+}

@@ -1,0 +1,20 @@
+# build output
+/dist/
+/dist-engine/
+/src-tauri/target/
+/native/aether/**/target/
+/native/.core-prev/
+
+# node
+node_modules/
+
+# signing material must NEVER be committed
+*.pfx
+*.p12
+*.snk
+keystore.properties
+
+# local
+.DS_Store
+Thumbs.db
+*.log

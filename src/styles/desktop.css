@@ -1,0 +1,70 @@
+/* =============================================================================
+   تطبیق با صفحهٔ بزرگ دسکتاپ.
+   طراحی دقیقاً همان موبایل است؛ فقط ابعاد و چیدمان بازتر می‌شوند.
+   ========================================================================== */
+
+/* v9: ریل ناوبری در هر اندازهٔ پنجره دائمی است (ریشهٔ به‌هم‌ریختگی v8 تعارض
+   همین media queryهای قدیمی drawer با CSS جدید بود — همه حذف شدند).
+   فقط فاصله‌گذاری محتوا با اندازهٔ پنجره تطبیق می‌یابد. */
+@media (max-width: 1023px) {
+  .main { padding: 22px 18px 40px; }
+}
+
+/* مانیتور بزرگ — محتوا و دکمهٔ اتصال بزرگ‌تر می‌شوند. */
+@media (min-width: 1280px) {
+  :root {
+    --content-max: 620px;
+    --connect-button: 196px;
+  }
+  .main { padding: 36px 44px 56px; }
+}
+
+/* راست‌به‌چپ — تمام چیدمان آینه‌ای می‌شود، ولی مقادیر فنی همیشه LTR می‌مانند. */
+html[dir="rtl"] .titlebar { padding-inline-start: 0; padding-inline-end: 16px; }
+html[dir="rtl"] .kv dt { text-align: start; }
+html[dir="rtl"] .kv dd { text-align: end; }
+
+/* هر چیزی که آدرس، پورت، نسخه یا لاگ است باید چپ‌به‌راست بماند — معادل LtrInput.kt */
+.ltr {
+  direction: ltr;
+  unicode-bidi: plaintext;
+  text-align: left;
+}
+
+/* پنجرهٔ حداقلی 960×640 — هیچ عنصری نباید بریده شود. */
+@media (max-height: 700px) {
+  .connect { --connect-button: 150px; margin: 4px 0 2px; }
+  .hero { margin-top: 4px; }
+  .main { padding-top: 18px; }
+}
+
+/* تمرکز کیبوردی — در دسکتاپ الزامی است. */
+:focus-visible {
+  outline: 2px solid var(--aether-blue);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* کاربرانی که انیمیشن کمتر می‌خواهند. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  /* Root fix for the frozen connect spinner (recurring problem 2):
+     Windows reports "reduced motion" whenever animation effects are off
+     (very common on VMs / RDP / performance mode). The blanket rule above
+     then froze the busy arc + arrows at 0deg forever. These two indicators
+     are STATE FEEDBACK, not decoration - per WCAG, essential motion may
+     stay. So they are explicitly re-enabled here. */
+  .connect.is-busy .connect__arc {
+    animation: arc-spin 1100ms linear infinite !important;
+  }
+  .connect.is-busy .connect__icon {
+    animation: icon-spin 1400ms linear infinite !important;
+  }
+  .connect__halo.is-on {
+    animation: halo-pulse 1600ms ease-in-out infinite !important;
+  }
+}

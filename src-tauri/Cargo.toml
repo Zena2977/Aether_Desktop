@@ -1,0 +1,45 @@
+[package]
+name = "aether-desktop"
+version = "1.0.0"
+description = "Aether Desktop - Windows edition"
+authors = ["Cluvex Studio"]
+edition = "2021"
+rust-version = "1.77"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-shell = "2"
+tauri-plugin-single-instance = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+parking_lot = "0.12"
+# Wintun — معادل ویندوزیِ VpnService + hev-tun در اندروید
+wintun = "0.5"
+# tun2socks در فضای کاربر: ترافیک TUN → SOCKS5 محلی موتور (127.0.0.1:1819)
+ipstack = "0.1"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "io-util", "time", "sync", "process"] }
+# native-tls: دست‌دادن TLS برای جای‌یابی IP روی 443 (معادل tlsWrap موبایل). در ویندوز از SChannel بومی استفاده می‌کند.
+native-tls = "0.2"
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.58", features = [
+  "Win32_Foundation",
+  "Win32_NetworkManagement_IpHelper",
+  "Win32_NetworkManagement_Ndis",
+  "Win32_Networking_WinSock",
+  "Win32_System_Threading",
+  "Win32_Security",
+] }
+
+[profile.release]
+# معادل minifyEnabled/R8 در اندروید — باینری کوچک و بدون سمبل اضافی.
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+incremental = false

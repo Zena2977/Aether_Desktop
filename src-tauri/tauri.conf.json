@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Aether",
+  "version": "1.0.0",
+  "identifier": "studio.cluvex.aether.desktop",
+  "build": {
+    "beforeBuildCommand": "npm run web:build",
+    "beforeDevCommand": "npm run web:dev",
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../dist-web"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Aether",
+        "label": "main",
+        "width": 1180,
+        "height": 780,
+        "minWidth": 960,
+        "minHeight": 640,
+        "resizable": true,
+        "center": true,
+        "decorations": false,
+        "transparent": false,
+        "theme": "Dark",
+        "backgroundColor": "#0A0E1A"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data: asset: http://asset.localhost; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' ipc: http://ipc.localhost"
+    },
+    "withGlobalTauri": false
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "resources": {
+      "../dist-engine/aether.exe": "engine/aether.exe",
+      "../dist-engine/wintun.dll": "engine/wintun.dll",
+      "../CORE_VERSION": "engine/CORE_VERSION"
+    },
+    "windows": {
+      "webviewInstallMode": { "type": "downloadBootstrapper", "silent": true },
+      "allowDowngrades": false
+    },
+    "publisher": "Cluvex Studio",
+    "copyright": "Copyright \u00a9 Cluvex Studio",
+    "category": "Utility",
+    "shortDescription": "Freedom, in one tap",
+    "longDescription": "Aether Desktop \u2014 the Windows edition of the Aether tunnelling client."
+  }
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aether</title>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/app.css" />
+  <link rel="stylesheet" href="styles/desktop.css" />
+</head>
+<body>
+  <!-- نوار عنوان سفارشی — decorations:false در tauri.conf.json -->
+  <header class="titlebar">
+    <img class="titlebar__icon" src="icon.png" alt="" width="16" height="16" />
+    <span class="titlebar__title">Aether</span>
+    <span class="titlebar__spacer"></span>
+    <!-- آیکونِ دکمه‌ها در زمان اجرا توسط main.js به‌صورت SVG تزریق می‌شود؛
+         گلیف فونت «Segoe MDL2 Assets» حذف شد چون به‌صورت مربع خراب رندر می‌شد. -->
+    <button class="twin twin--min" aria-label="Minimize"></button>
+    <button class="twin twin--max" aria-label="Maximize"></button>
+    <button class="twin twin--close" aria-label="Close"></button>
+  </header>
+
+  <!-- در موبایل Drawer رویی بود؛ در دسکتاپ همان محتوا در یک ریل دائمی. -->
+  <div class="shell">
+    <nav class="rail" id="nav-rail" aria-label="Sections">
+      <button class="rail__item is-active" data-tab="home">Home</button>
+      <button class="rail__item" data-tab="advanced">Advanced</button>
+      <button class="rail__item" data-tab="diagnostics">Diagnostics</button>
+      <button class="rail__item" data-tab="share">Share over LAN</button>
+      <button class="rail__item" data-tab="about">About</button>
+    </nav>
+
+    <main class="main">
+      <div id="view"></div>
+    </main>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
